@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="utility.first.morsemessages"
+    android:versionCode="1"
+    android:versionName="1.0" 
+   
+    >
+	
+    <uses-sdk
+        android:minSdkVersion="5"
+        android:targetSdkVersion="19" 
+        />
+    <uses-permission android:name="android.permission.VIBRATE"/>
+     <uses-permission android:name="android.permission.RECEIVE_SMS"/>
+     <uses-permission android:name="android.permission.READ_CONTACTS"/>
+
+    <application
+        
+        android:allowBackup="true"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme" 
+        >
+        
+        <service 
+            android:name="utility.first.morsemessages.service.MorseMessageService"
+            android:icon="@drawable/mc_messagerecv"
+            android:label="messagelistener">
+            
+        </service>
+        <activity
+            
+            android:name="utility.first.morsemessages.MainActivity"
+            android:label="MorseMesssages" 
+            android:icon="@drawable/mc_launcher"
+            android:screenOrientation="portrait"
+            >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity 
+            android:name="utility.first.morsemessages.ComposeActivity"
+            android:screenOrientation="portrait"
+            android:label="Compose"
+            android:icon="@drawable/icon"
+             android:configChanges="keyboardHidden|orientation"
+            ></activity>
+        
+        <activity 
+            android:name="utility.first.morsemessages.HelpActivity"
+            android:screenOrientation="portrait"
+            android:label="help"
+            ></activity>
+        
+         
+        <activity 
+            android:name="utility.first.morsemessages.SettingsActivity"
+            android:screenOrientation="portrait"
+            android:label="settings"
+            ></activity>
+        
+        <activity 
+            android:name="utility.first.morsemessages.TestActivity"
+            android:screenOrientation="portrait"
+            android:label="test"
+            ></activity>
+        
+        
+        <activity
+            android:name="utility.first.morsemessages.AboutActivity"
+            android:screenOrientation="portrait"
+            android:label="about" 
+            ></activity>
+    </application>
+		
+   
+</manifest>

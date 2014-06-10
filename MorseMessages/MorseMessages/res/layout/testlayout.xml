@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/black"
+    android:orientation="vertical" >
+    
+    <TextView
+        android:background="#ffff00"
+        android:textColor="@android:color/black"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" 
+        android:text="Test - Train"
+         android:layout_weight="3"
+        android:textSize="20sp"
+        android:gravity="center"
+        />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/black"
+        android:textColor="@android:color/white"
+        android:text="Press the 'sense' button and sense the vibration and enter the character into text box "
+        android:inputType="textMultiLine" 
+        android:focusable="false"
+        />
+    
+    <Button
+        android:id="@+id/sensebutton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Sense"
+        android:layout_weight="2"
+        android:textColor="@android:color/black"
+        android:background="#ffff00"
+         
+        />
+    
+    <EditText 
+        android:id="@+id/senseinput"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+		android:textColor="@android:color/black"
+		android:background="@android:color/white"
+		 android:layout_weight="2"
+        />
+    
+    <Button 
+        android:id="@+id/checkbutton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+         android:layout_weight="2"
+        android:background="#ffff00"
+        android:textColor="@android:color/black"
+        android:text="check"
+        />
+</LinearLayout>

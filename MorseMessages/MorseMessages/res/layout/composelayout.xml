@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+ 
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/black"
+    android:isScrollContainer="true"
+    android:orientation="vertical"
+    android:scrollbars="vertical" 
+    >
+   
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#ffff00"
+        android:text="ENTER YOUR MESSAGE"
+        android:textSize="20sp"
+        android:gravity="center"
+        android:textColor="@android:color/black" 
+        android:layout_weight="2"/>
+    
+
+    <EditText
+        android:id="@+id/input"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:background="@android:color/black"
+        android:hint="message to convert"
+        android:textColor="#ffff00"
+        android:textStyle="italic"
+        android:typeface="sans" 
+        android:layout_weight="1"/>
+
+    <Button
+        android:id="@+id/composebutton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Convert" 
+        android:background="#ffff00"
+        android:layout_weight="1"/>
+
+    
+      <ScrollView
+          android:id="@+id/scrollView1"
+          android:layout_width="match_parent"
+          android:layout_height="150dp"
+          android:layout_weight="4" >
+
+          <LinearLayout
+              android:layout_width="match_parent"
+              android:layout_height="match_parent" >
+               <TextView
+        android:id="@+id/morsemessage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:isScrollContainer="true"
+        android:background="@android:color/black"
+        android:textColor="#ffff00"
+        android:text="TextView" />
+          </LinearLayout>
+      </ScrollView>
+      <Button
+          android:id="@+id/vibratebutton"
+          android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+          android:text="vibrate"
+          
+          android:background="#ffff00"
+      	android:layout_weight="1"
+          />
+      <Button 
+          android:id="@+id/stopvibration"
+            android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="invisible"
+        android:text="stop vibrate"
+           android:background="#ffff00"
+          android:layout_weight="1"
+          />
+
+</LinearLayout>
+

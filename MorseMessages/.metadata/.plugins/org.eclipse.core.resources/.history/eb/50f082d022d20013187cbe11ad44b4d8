@@ -1,0 +1,65 @@
+package utility.first.morsemessages.vibrator;
+
+import java.util.ServiceLoader;
+
+import android.app.Service;
+import android.content.Context;
+import android.os.Vibrator;
+
+public class MessageVibrator {
+	
+	
+	private long UNIT = 60;
+	private long DOT = UNIT;
+	private long DASH = 3*UNIT;
+	private long SLEEP = 40;
+	public void setDotndDash(int value)
+	{
+		DOT = (1+value)*40;
+		DASH = (1+value)*120;
+	}
+	
+	
+	public void setSleepTime(int value)
+	{
+		SLEEP = (1+value)*40;
+	}
+	
+	public void vibrate(Vibrator vibrator,String output)
+	{
+		for(int i=0;i<output.length();i++)
+		{
+			if(output.charAt(i)=='.')
+			{
+				vibrator.vibrate(DOT);
+				try {
+					Thread.sleep(SLEEP);
+				} catch (InterruptedException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+	
+			}	
+			else if(output.charAt(i)=='-')
+			{
+				vibrator.vibrate(DASH);
+				try {
+					Thread.sleep(SLEEP);
+				} catch (InterruptedException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+			}
+			else if(output.charAt(i)==' ')
+			{
+				try {
+					Thread.sleep(SLEEP*2);
+				} catch (InterruptedException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+			}
+		}
+	}
+	
+}

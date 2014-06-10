@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@android:color/black" >
+    
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="match_parent"
+        android:layout_height="75dp"
+        android:background="#ffff00"
+        android:textColor="#000000"
+        android:textSize="40sp"
+        android:gravity="center"
+        android:text="ABOUT" />
+<ScrollView 
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    
+    >
+    <LinearLayout 
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+       
+        >
+        <TextView
+       android:background="#000000"
+       android:textColor="#ffffff"
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+       android:text="What is this morsecode.." 
+       android:textSize="25sp"
+       />
+    <EditText
+        android:id="@+id/editText1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:gravity="top"
+        android:textColor="#ffff00"
+        android:background="@android:color/black"
+        
+        android:text="Morse code is a method of transmitting text
+  information as a series of on-off tones, lights, or clicks
+ that can be directly understood by a skilled listener or 
+ observer without special equipment."
+        android:inputType="textMultiLine" 
+        android:focusable="false"
+    />
+   <TextView
+       android:background="#000000"
+       android:textColor="#ffffff"
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+       android:text="What is this app.." 
+        android:textSize="25sp"
+       />
+<EditText
+        android:id="@+id/editText2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:gravity="top"
+        android:textColor="#ffff00"
+        android:background="@android:color/black"
+        android:text="This application notifies you from whom the message is received without even taking out your phone .The message received is converted into morse code (dots and dashes) and that morse code is vibrated.For now, the name or the phone number of the sender is converted and will be vibrated. If you don't know morse code then don't worry you can even learn morse code from this app and you can even configure the vibration length for your convenience."
+        android:inputType="textMultiLine" 
+        android:focusable="false"
+    />
+   <TextView
+       android:background="#000000"
+       android:textColor="#ffffff"
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+       android:text="How to use this app.." 
+        android:textSize="25sp"
+       />
+   
+<EditText
+        android:id="@+id/editText3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:gravity="top"
+        android:textColor="#ffff00"
+        android:background="@android:color/black"
+        android:text="There are four major buttons in this application."
+        android:inputType="textMultiLine" 
+        android:focusable="false"
+    />
+<ImageView
+    android:src="@drawable/mc_compose"
+    android:scaleType="fitXY" 
+    android:layout_width="100dp"
+    android:layout_height="100dp"
+    />
+<EditText
+        android:id="@+id/editText3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:gravity="top"
+        android:textColor="#ffff00"
+        android:background="@android:color/black"
+        android:text="This button is compose button .This won't send any messages. This is used to enter some text and convert it to morse code and vibrate."
+        android:inputType="textMultiLine" 
+        android:focusable="false"
+    />
+	
+<ImageView
+    android:src="@drawable/mc_settings"
+    android:scaleType="fitXY" 
+    android:layout_width="100dp"
+    android:layout_height="100dp"
+    />
+<EditText
+        android:id="@+id/editText4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:gravity="top"
+        android:textColor="#ffff00"
+        android:background="@android:color/black"
+        android:text="This is Settings Button which opens a screen which allows you to configure the application. You can specify the duration of vibration and the gap time between between each vibration. Vibrations for specific person feature will be added soon.."
+        android:inputType="textMultiLine" 
+        android:focusable="false"
+    />
+
+	<ImageView
+    android:src="@drawable/morsemessages_vibration_stop"
+    android:scaleType="fitXY" 
+    android:layout_width="100dp"
+    android:layout_height="100dp"
+    />
+	<EditText
+        android:id="@+id/editText5"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:gravity="top"
+        android:textColor="#ffff00"
+        android:background="@android:color/black"
+        android:text="This indicates that the listener is stopped..... ie., it won't vibrate for the messages .On clicked this button it will start the listener and the button is changed to this ..."
+        android:inputType="textMultiLine" 
+        android:focusable="false"
+    />
+	
+	<ImageView
+    android:src="@drawable/morsemessages_vibration"
+    android:scaleType="fitXY" 
+    android:layout_width="100dp"
+    android:layout_height="100dp"
+    />
+	
+	<EditText
+        android:id="@+id/editText6"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:gravity="top"
+        android:textColor="#ffff00"
+        android:background="@android:color/black"
+        android:text="On again clicking this it'll stop the listener ..."
+        android:inputType="textMultiLine" 
+        android:focusable="false"
+    />
+	
+	<ImageView
+    android:src="@drawable/morsemessages_help"
+    android:scaleType="fitXY" 
+    android:layout_width="100dp"
+    android:layout_height="100dp"
+    />
+	
+	<EditText
+        android:id="@+id/editText7"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:gravity="top"
+        android:textColor="#ffff00"
+        android:background="@android:color/black"
+        android:text="This is help button .This provides morse code reference to the user and also trains the user.User can train in different formats .\n 1)By observing the pattern and entering the corresponding words \n2) entering the morse code for the word..."
+        android:inputType="textMultiLine" 
+        android:focusable="false"
+    />
+	
+    </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

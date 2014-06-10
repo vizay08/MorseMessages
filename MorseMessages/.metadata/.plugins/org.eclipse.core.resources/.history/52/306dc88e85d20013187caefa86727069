@@ -1,0 +1,110 @@
+package utility.first.morsemessages.listener;
+
+
+import utility.first.morsemessages.morseconverter.MorseConverter;
+import utility.first.morsemessages.servicesupport.ServiceSupport;
+import utility.first.morsemessages.vibrator.MessageVibrator;
+
+import android.content.BroadcastReceiver;
+import android.content.Context;
+import android.content.Intent;
+import android.media.AudioManager;
+import android.os.Bundle;
+import android.os.Vibrator;
+import android.telephony.SmsMessage;
+import android.util.Log;
+import android.widget.Toast;
+
+public class MorseMessageReceiver extends BroadcastReceiver { 
+
+	final String RECEIVER_TYPE="android.provider.Telephony.SMS_RECEIVED";
+	final MorseConverter converter = new MorseConverter();
+	private int dotDashDuration = 0;
+	private int gapDuration = 0;
+	
+	@Override
+	public void onReceive(Context context,Intent intent) {
+		// TODO Auto-generated method stub
+		
+		
+			ServiceSupport support = new ServiceSupport(context.getApplicationContext());
+				dotDashDuration = support.getDotDashDuration();
+				gapDuration = support.getGapDuration();
+				
+				
+				Log.d("dotduration",""+dotDashDuration);
+				Log.d("gap duration",""+gapDuration);
+				
+				Vibrator vibrate =(Vibrator)context.getSystemService(Context.VIBRATOR_SERVICE);
+				if(intent.getAction().equals(RECEIVER_TYPE))
+				{
+					Log.d("in morsemessagerecver dotduration",""+dotDashDuration);
+					Log.d("in morsemessagerecver gap duration",""+gapDuration);
+					
+					SmsMessage messages = null;
+					String msgSender = null;
+					String msgBody = null;
+					Bundle bundle = intent.getExtras();
+					if(bundle!= null)
+					{
+						Log.d("recv_type is sms","oh! got your message!!");
+						Object[] pdus = (Object[])bundle.get("pdus");
+						
+						
+							try{
+							messages= SmsMessage.createFromPdu((byte[])pdus[0]);
+							msgSender = messages.getOriginatingAddress();
+							msgBody = messages.getMessageBody();
+							
+						
+							/*Toast.makeText(context, "SMS Ochindi : "+messages.getOriginatingAddress(),
+								     Toast.LENGTH_LONG).show();*/
+							
+							String outputString = converter.getMorseCode(msgBody);//msgSender);
+							
+						/*	Toast.makeText(context, "SMS Idigo : "+outputString,
+								     Toast.LENGTH_LONG).show();*/
+							
+							
+							Log.d("in MorseMessageReceiver onReceiver method","Msg sender"+msgSender);
+							
+							
+							
+							MessageVibrator vibrator=new MessageVibrator();
+							/*	
+							Toast.makeText(context, "Durations : "+dotDashDuration + " " + gapDuration,
+								     Toast.LENGTH_LONG).show();
+						
+							AudioManager audioManager = (AudioManager)context.getSystemService(Context.AUDIO_SERVICE);
+					        int maxVolumeMusic = audioManager.getStreamMaxVolume(AudioManager.STREAM_NOTIFICATION);
+					        
+					        int ringerMode  = audioManager.getRingerMode();
+					        
+					        audioManager.setRingerMode(AudioManager.RINGER_MODE_VIBRATE);
+					        */
+			
+					        
+					        vibrator.setDotndDash(dotDashDuration);
+							vibrator.setSleepTime(gapDuration);
+							vibrator.vibrate(vibrate, outputString);
+					        
+							
+						//	audioManager.setRingerMode(ringerMode);
+							
+//							vibrator.setDotndDash(4);
+//							vibrator.setSleepTime(9);
+//							vibrator.vibrate(vibrate2, outputString);
+							
+							}catch(Exception e)
+							{
+								Toast.makeText(context, "Some error occured while retrieving message", Toast.LENGTH_SHORT).show();
+								Log.e("error in mmrecv", e.toString());
+							}
+
+					}
+					
+				}
+	
+	}
+
+}

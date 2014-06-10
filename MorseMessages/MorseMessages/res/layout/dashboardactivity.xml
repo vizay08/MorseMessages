@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" 
+    android:background="@android:color/black">
+    
+    
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1" 
+        >
+        <TextView
+            android:background="#ffff00"
+            android:textColor="@android:color/black"
+            android:textSize="30sp"
+            android:layout_height="match_parent"
+            android:text = "Morse Messages"
+            android:gravity="center" 
+          	android:layout_width="match_parent"
+            />
+    </LinearLayout>
+   <LinearLayout
+       android:layout_width="match_parent"
+       android:layout_height="0dp"
+  		android:layout_weight="8"
+  		
+  		android:orientation="vertical"      
+       >
+       <LinearLayout
+           android:layout_width="match_parent"
+           android:layout_weight="4"
+           android:layout_height="0dp"
+           >
+           <ImageButton
+               android:id="@id/composebutton"
+               android:layout_height="match_parent"
+               android:layout_width="0dp"
+               android:layout_weight="5"
+               android:src="@drawable/mc_compose"
+               android:background="@android:color/black"
+               android:scaleType="fitXY"
+               android:padding="10px" 
+               />
+           
+           
+           <ImageButton
+               android:id="@id/settings"
+               android:layout_height="match_parent"
+               android:background="@android:color/black"
+               android:layout_width="0dp"
+               android:layout_weight="5"
+               android:src="@drawable/mc_settings"
+                android:scaleType="fitXY"
+               android:padding="10px"
+               />
+           
+       </LinearLayout>
+       
+       <LinearLayout
+           android:layout_width="match_parent"
+           android:layout_height="0dp"
+           android:layout_weight="4" 
+           >
+           <ImageButton
+               android:id="@id/msgvibrater"
+               android:layout_height="match_parent"
+               android:background="@android:color/black"
+               android:layout_width="0dp"
+               android:layout_weight="5"
+               android:src="@drawable/morsemessages_vibration_stop" 
+               android:scaleType="fitXY"
+               android:padding="10px"
+               
+               />
+           
+           
+           <ImageButton
+               android:id="@id/help"
+               android:layout_height="match_parent"
+               android:layout_width="0dp"
+               android:layout_weight="5"
+               android:background="@android:color/black"
+               android:src="@drawable/morsemessages_help" 
+               android:scaleType="fitXY"
+               android:padding="10px"
+               />
+       </LinearLayout>
+       <LinearLayout 
+           android:layout_width="match_parent"
+           android:layout_height="0dp"
+           android:layout_weight="2"
+           >
+           <Button
+               android:id="@+id/about_button"
+               android:textColor="#ffff00"
+               android:textSize="20sp"
+               android:layout_width="match_parent" 
+               android:layout_height="match_parent"
+               android:background="@android:color/black"
+               android:text="ABOUT"
+               />
+       </LinearLayout>
+       
+   </LinearLayout>
+	<LinearLayout
+	    android:layout_width="match_parent"
+	    android:layout_height="0dp"
+	    android:layout_weight="1" 
+	    >
+
+	    <TextView
+	        android:id="@+id/company"
+	        android:layout_width="match_parent"
+	        android:layout_height="match_parent"
+	        android:gravity="center"
+	        android:text="Copyright Innovation labs"
+	        android:textColor="@android:color/white" 
+	        android:visibility="invisible"/>
+
+	</LinearLayout>
+</LinearLayout>
